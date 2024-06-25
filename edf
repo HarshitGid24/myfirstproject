@@ -1,0 +1,56 @@
+bl= Label(root,text="BILL",font=("Elephant",20)).place(x=200,y=150)
+l1=Label(root,text="---------------------------------------------------------------------------------------------------",font=("Helvetica",12),fg="red",bg="black").place(x=0,y=200)
+b2=Label(root,text="Invoice From:",font=("Helvetica",12)).place(x=20,y=230)
+r1=Label(root,text="Continental Perk Inc.",font=("Calibri",14),bg="grey").place(x=15,y=260)
+r2=Label(root,text="cp123@gmail.com",font=("Calibri",14),bg="grey").place(x=15,y=290)
+r3=Label(root,text="+91 9810909952",font=("Calibri",14),bg="grey").place(x=15,y=320)
+b3=Label(root,text="Invoice To:",font=("Helvetica",12)).place(x=350,y=230)
+c1=Label(root,text=r[0]+' '+r[1],font=("Helvetica",12),bg="grey").place(x=350,y=260)
+c2=Label(root,text=r[3],font=("Helvetica",12),bg="grey").place(x=350,y=290)
+c3=Label(root,text=r[2],font=("Helvetica",12),bg="grey").place(x=350,y=320)
+
+l2=Label(root,text="---------------------------------------------------------------------------------------------------",font=("Helvetica",12),fg="pink",bg="black").place(x=0,y=370)
+
+c.execute("SELECT * FROM menu")
+a=[]
+for x in c:
+    a.append(x)
+a=a[-1]
+h="hello"
+d=Label(root,text="DESCRIPTION",font=("Helvetica",15),bg="white",fg="red").place(x=10,y=400)
+l3=Label(root,text="---------------------------------------------------------------------------------------------------",font=("Helvetica",12),fg="pink",bg="black").place(x=0,y=440)
+q=Label(root,text="QTY",font=("Helvetica",15),bg="white",fg="red").place(x=280,y=400)
+
+q2=Label(root,text="PRICE",font=("Helvetica",15),bg="white",fg="red").place(x=340,y=400)
+q3=Label(root,text="TOTAL",font=("Helvetica",15),bg="white",fg="red").place(x=420,y=400)
+
+pizza= Label(root, text = "1.Pizza",font=("Elephant",15),fg="Black").place(x=10,y=480)
+y1=Label(root,text=a[0],font=("Elephant",15),bg="white",fg="black").place(x=290,y=480)
+p1=Label(root,text="Rs.489",font=("Algerian",18),bg="brown",fg="white").place(x=325,y=480)
+t1=Label(root,text=int(a[0])*200,font=("Algerian",18),bg="white",fg="brown").place(x=430,y=480)
+
+bg= Label(root, text = "2.Burger",font=("Elephant",15),fg="Black").place(x=10,y=520)
+y2=Label(root,text=a[1],font=("Elephant",15),bg="white",fg="black").place(x=290,y=520)
+p2=Label(root,text="Rs.150",font=("Algerian",18),bg="brown",fg="white").place(x=325,y=520)
+t2=Label(root,text=int(a[1])*100,font=("Algerian",18),bg="white",fg="brown").place(x=430,y=520)
+
+pasta= Label(root, text = "3.Pasta",font=("Elephant",15),fg="Black").place(x=10,y=560)
+y3=Label(root,text=a[2],font=("Elephant",15),bg="white",fg="black").place(x=290,y=560)
+p3=Label(root,text="Rs.300",font=("Algerian",18),bg="brown",fg="white").place(x=325,y=560)
+t3=Label(root,text=int(a[2])*300,font=("Algerian",18),bg="white",fg="brown").place(x=430,y=560)
+
+sushi=Label(root, text = "4.Sushi",font=("Elephant",15),fg="Black").place(x=10,y=600)
+y4=Label(root,text=a[3],font=("Elephant",15),bg="white",fg="black").place(x=290,y=600)
+p4=Label(root,text="Rs.350",font=("Algerian",18),bg="brown",fg="white").place(x=325,y=600)
+t4=Label(root,text=int(a[3])*250,font=("Algerian",18),bg="white",fg="brown").place(x=430,y=600)
+
+momos= Label(root, text = "5.Dimsums",font=("Elephant",15),fg="Black").place(x=10,y=640)
+y5=Label(root,text=a[4],font=("Elephant",15),bg="white",fg="black").place(x=290,y=640)
+p5=Label(root,text="Rs.400",font=("Algerian",18),bg="brown",fg="white").place(x=325,y=640)
+t5=Label(root,text=int(a[4])*100,font=("Algerian",18),bg="white",fg="brown").place(x=430,y=640)
+
+ll=Label(root,text="TOTAL BILL ~",font=("Elephant",18),bg="black",fg="white").place(x=90,y=690)
+tot=int(a[0])*200+int(a[1])*100+int(a[2])*300+int(a[3])*250+int(a[4])*100
+t6=Label(root,text=str(tot),font=("Elephant",18),bg="black",fg="white").place(x=300,y=690)
+main_frame = Frame(root)
+main_frame.pack(fill=BOTH, expand=1)
