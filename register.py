@@ -12,9 +12,14 @@ c = connection.cursor()
 
 bkg = "#636e72"
 
+def welcome():
+    root.destroy()
+    os.system("Welcome.py")
+
 
 frame = tk.Frame(root, bg=bkg)
 
+back=tk.Button(frame,text="Back",font=('verdana',12),command=welcome)
 label_firstname = tk.Label(frame, text="First Name: ", font=('verdana',12), bg=bkg)
 entry_firstname = tk.Entry(frame, font=('verdana',12))
 
@@ -68,6 +73,9 @@ entry_uname.grid(row=4, column=1, pady=10, padx=10)
 
 label_pwd.grid(row=5, column=0, sticky='e')
 entry_pwd.grid(row=5, column=1, pady=10, padx=10)
+
+back.grid(row=7,column=2)
+frame.grid(row=0,column=0)
 
 button_insert.grid(row=7,column=0, columnspan=2, pady=10, padx=10, sticky='nsew')
 
